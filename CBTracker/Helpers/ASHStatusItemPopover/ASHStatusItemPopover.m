@@ -20,7 +20,8 @@
 - (void)toggleImage;
 @end
 
-1
+@implementation ASHStatusItemPopover
+
 - (id)init
 {
     CGRect frame = CGRectMake(0, 0, STATUS_ITEM_WIDTH, [NSStatusBar systemStatusBar].thickness);

@@ -18,7 +18,6 @@
 		737A066518B1B1A100B1B99D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 737A066318B1B1A100B1B99D /* InfoPlist.strings */; };
 		737A066718B1B1A100B1B99D /* CBTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 737A066618B1B1A100B1B99D /* CBTrackerTests.m */; };
 		737A067118B1B21D00B1B99D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737A067018B1B21D00B1B99D /* MainMenu.xib */; };
-		737A068018B1B28700B1B99D /* ASHStatusItemPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 737A067518B1B28700B1B99D /* ASHStatusItemPopover.m */; };
 		737A068118B1B28700B1B99D /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737A067818B1B28700B1B99D /* WindowController.m */; };
 		737A068218B1B28700B1B99D /* WindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737A067918B1B28700B1B99D /* WindowController.xib */; };
 		737A068318B1B28700B1B99D /* alternateImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 737A067C18B1B28700B1B99D /* alternateImage.png */; };
@@ -40,6 +39,7 @@
 		737A06B418B1D3BB00B1B99D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A06B318B1D3BB00B1B99D /* SystemConfiguration.framework */; };
 		737A06B618B1D3D800B1B99D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A06B518B1D3D700B1B99D /* Security.framework */; };
 		737A06B818B1D49F00B1B99D /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737A06B718B1D49F00B1B99D /* CoreServices.framework */; };
+		B7C03D5818B2BA1800AADAC3 /* ASHStatusItemPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C03D5718B2BA1800AADAC3 /* ASHStatusItemPopover.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +72,6 @@
 		737A066418B1B1A100B1B99D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		737A066618B1B1A100B1B99D /* CBTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBTrackerTests.m; sourceTree = "<group>"; };
 		737A067018B1B21D00B1B99D /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		737A067418B1B28700B1B99D /* ASHStatusItemPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHStatusItemPopover.h; sourceTree = "<group>"; };
-		737A067518B1B28700B1B99D /* ASHStatusItemPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHStatusItemPopover.m; sourceTree = "<group>"; };
 		737A067718B1B28700B1B99D /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		737A067818B1B28700B1B99D /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
 		737A067918B1B28700B1B99D /* WindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WindowController.xib; sourceTree = "<group>"; };
@@ -109,6 +107,8 @@
 		737A06B318B1D3BB00B1B99D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		737A06B518B1D3D700B1B99D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		737A06B718B1D49F00B1B99D /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		B7C03D5618B2BA1800AADAC3 /* ASHStatusItemPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHStatusItemPopover.h; sourceTree = "<group>"; };
+		B7C03D5718B2BA1800AADAC3 /* ASHStatusItemPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHStatusItemPopover.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,20 +227,11 @@
 		737A067218B1B28700B1B99D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B7C03D5518B2BA1800AADAC3 /* ASHStatusItemPopover */,
 				737A06AD18B1D30700B1B99D /* Constants.h */,
 				737A06AE18B1D30700B1B99D /* Constants.m */,
-				737A067318B1B28700B1B99D /* ASHStatusItemPopover */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		737A067318B1B28700B1B99D /* ASHStatusItemPopover */ = {
-			isa = PBXGroup;
-			children = (
-				737A067418B1B28700B1B99D /* ASHStatusItemPopover.h */,
-				737A067518B1B28700B1B99D /* ASHStatusItemPopover.m */,
-			);
-			path = ASHStatusItemPopover;
 			sourceTree = "<group>";
 		};
 		737A067618B1B28700B1B99D /* Controllers */ = {
@@ -307,6 +298,15 @@
 				737A06AB18B1D16F00B1B99D /* Price.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B7C03D5518B2BA1800AADAC3 /* ASHStatusItemPopover */ = {
+			isa = PBXGroup;
+			children = (
+				B7C03D5618B2BA1800AADAC3 /* ASHStatusItemPopover.h */,
+				B7C03D5718B2BA1800AADAC3 /* ASHStatusItemPopover.m */,
+			);
+			path = ASHStatusItemPopover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,7 +412,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				737A068018B1B28700B1B99D /* ASHStatusItemPopover.m in Sources */,
 				737A069F18B1CCC900B1B99D /* AFSecurityPolicy.m in Sources */,
 				737A06B218B1D35700B1B99D /* LoadPricesClient.m in Sources */,
 				737A068118B1B28700B1B99D /* WindowController.m in Sources */,
@@ -424,6 +423,7 @@
 				737A06A118B1CCC900B1B99D /* AFURLRequestSerialization.m in Sources */,
 				737A069D18B1CCC900B1B99D /* AFHTTPSessionManager.m in Sources */,
 				737A069E18B1CCC900B1B99D /* AFNetworkReachabilityManager.m in Sources */,
+				B7C03D5818B2BA1800AADAC3 /* ASHStatusItemPopover.m in Sources */,
 				737A06A218B1CCC900B1B99D /* AFURLResponseSerialization.m in Sources */,
 				737A06A318B1CCC900B1B99D /* AFURLSessionManager.m in Sources */,
 				737A064918B1B1A100B1B99D /* main.m in Sources */,
@@ -630,6 +630,7 @@
 				737A066C18B1B1A100B1B99D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		737A066D18B1B1A100B1B99D /* Build configuration list for PBXNativeTarget "CBTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -638,6 +639,7 @@
 				737A066F18B1B1A100B1B99D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
