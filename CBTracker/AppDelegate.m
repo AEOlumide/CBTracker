@@ -26,7 +26,6 @@
     
     self.windowController = [[WindowController alloc] initWithWindowNibName:@"WindowController"];
     self.statusItemPopover.windowController = self.windowController;
-    //[self.windowController loadPrices];
 
     self.statusItemPopover.image = [NSImage imageNamed:@"statusImage"];
     self.statusItemPopover.alternateImage = [NSImage imageNamed:@"alternateImage"];
@@ -35,13 +34,10 @@
     self.statusItemPopover.popoverWillShow = ^{
         DLog(@"Popover will show");
         [weakSelf.windowController loadPrices];
-        //[weakSelf.windowController loadPrices];
     };
     
     self.statusItemPopover.popoverDidShow = ^{
         DLog(@"Popover did show");
-        [weakSelf.windowController loadPrices];
-//        [weakSelf.statusItemPopover setupTitle:weakSelf.windowController.price];
     };
     
     self.statusItemPopover.popoverWillClose = ^{
@@ -55,7 +51,6 @@
     [self.windowController loadPrices];
     
     self.windowController.pricesDidLoad = ^(NSString *price) {
-        DLog(@"price:::::%@",price);
         [weakSelf.statusItemPopover setupTitle:[NSString stringWithFormat:@"$%@",price]];
     };
     
