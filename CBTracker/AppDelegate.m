@@ -30,6 +30,8 @@
     self.statusItemPopover.image = [NSImage imageNamed:@"statusImage"];
     self.statusItemPopover.alternateImage = [NSImage imageNamed:@"alternateImage"];
 
+    [self.statusItemPopover setupTitle:@"$0.00"];
+    
     __weak typeof(self) weakSelf = self;
     self.statusItemPopover.popoverWillShow = ^{
         DLog(@"Popover will show");

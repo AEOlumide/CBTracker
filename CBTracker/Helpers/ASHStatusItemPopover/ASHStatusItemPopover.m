@@ -35,7 +35,7 @@
         
         _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
         _statusItem.view = self;
-        [self setupTitle:@"$0.00"];
+
         self.imageAlignment = NSImageAlignLeft;
         
         _popover = [[NSPopover alloc] init];
