@@ -9,5 +9,6 @@
 #import <Cocoa/Cocoa.h>
 
 @interface WindowController : NSWindowController
+@property (nonatomic, copy) void (^pricesDidLoad)(NSString *price);
 -(void)loadPrices;
 @end

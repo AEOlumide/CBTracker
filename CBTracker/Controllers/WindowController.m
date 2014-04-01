@@ -34,7 +34,7 @@
         }
         else{
             [self setTextFieldValues:price];
-//Do Dis wit block            [self.contentVCDelegate priceUpdated:price.total];
+            _pricesDidLoad(price.total);
         }
         DLog(@"total price: %@",price.total);
         

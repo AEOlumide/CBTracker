@@ -8,13 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
-#define STATUS_ITEM_WIDTH 22
+#define STATUS_ITEM_WIDTH 50
 
 @interface ASHStatusItemPopover : NSImageView <NSPopoverDelegate>
 
 @property (strong, nonatomic) NSWindowController *windowController;
 @property (strong, nonatomic) NSImage *alternateImage;
 @property (strong, nonatomic, readonly) NSPopover *popover;
+@property (strong, nonatomic) NSString *title;
 
 @property (nonatomic, copy) void (^popoverWillShow)();
 @property (nonatomic, copy) void (^popoverDidShow)();
@@ -23,6 +24,7 @@
 @property (nonatomic, assign) BOOL active;
 
 - (void)mouseDown:(NSEvent *)theEvent;
+-(void)setupTitle:(NSString *)title;
 @end
 
 #pragma mark - ASHStatusItemPanel

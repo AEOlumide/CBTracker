@@ -26,7 +26,7 @@
     
     self.windowController = [[WindowController alloc] initWithWindowNibName:@"WindowController"];
     self.statusItemPopover.windowController = self.windowController;
-    [self.windowController loadPrices];
+    //[self.windowController loadPrices];
 
     self.statusItemPopover.image = [NSImage imageNamed:@"statusImage"];
     self.statusItemPopover.alternateImage = [NSImage imageNamed:@"alternateImage"];
@@ -35,10 +35,13 @@
     self.statusItemPopover.popoverWillShow = ^{
         DLog(@"Popover will show");
         [weakSelf.windowController loadPrices];
+        //[weakSelf.windowController loadPrices];
     };
     
     self.statusItemPopover.popoverDidShow = ^{
         DLog(@"Popover did show");
+        [weakSelf.windowController loadPrices];
+//        [weakSelf.statusItemPopover setupTitle:weakSelf.windowController.price];
     };
     
     self.statusItemPopover.popoverWillClose = ^{
@@ -49,9 +52,15 @@
         DLog(@"Popover did close");
     };
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeWindow) name:NSWindowDidResignKeyNotification object:[self window]];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeWindow) name:NSWindowDidResignMainNotification object:[self window]];
+    [self.windowController loadPrices];
     
+    self.windowController.pricesDidLoad = ^(NSString *price) {
+        DLog(@"price:::::%@",price);
+        [weakSelf.statusItemPopover setupTitle:[NSString stringWithFormat:@"$%@",price]];
+    };
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeWindow) name:NSWindowDidResignKeyNotification object:[self window]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeWindow) name:NSWindowDidResignMainNotification object:[self window]];    
 
 }
 

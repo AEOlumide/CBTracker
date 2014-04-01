@@ -14,6 +14,8 @@
     NSStatusItem *_statusItem;
     NSMenu *_dummyMenu;
     id _popoverTransiencyMonitor;
+    
+    int newWidth;
 }
 - (void)showPopover;
 - (void)hidePopover;
@@ -24,6 +26,7 @@
 
 - (id)init
 {
+    
     CGRect frame = CGRectMake(0, 0, STATUS_ITEM_WIDTH, [NSStatusBar systemStatusBar].thickness);
     
     if (self = [super initWithFrame:frame]) {
@@ -32,6 +35,8 @@
         
         _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
         _statusItem.view = self;
+        [self setupTitle:@"$0.00"];
+        self.imageAlignment = NSImageAlignLeft;
         
         _popover = [[NSPopover alloc] init];
         _popover.delegate = self;
@@ -42,11 +47,71 @@
     return self;
 }
 
+- (NSColor *)titleForegroundColor {
+    if (_active) {
+        return [NSColor whiteColor];
+    }
+    else {
+        return [NSColor blackColor];
+    }
+}
+
+- (NSDictionary *)titleAttributes {
+    // Use default menu bar font size
+    NSFont *font = [NSFont menuBarFontOfSize:0];
+    
+    NSColor *foregroundColor = [self titleForegroundColor];
+    
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            font,            NSFontAttributeName,
+            foregroundColor, NSForegroundColorAttributeName,
+            nil];
+}
+
+- (NSRect)titleBoundingRect {
+    
+    return [self.title boundingRectWithSize:NSMakeSize(CGFLOAT_MAX, [NSStatusBar systemStatusBar].thickness)
+                                    options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                 attributes:[self titleAttributes]];
+}
+
+-(void)setupTitle:(NSString *)title{
+    if (![self.title isEqualToString:title]) {
+        self.title = title;
+    }
+    
+    if ([self.title length]>0) {
+        // Update status item size (which will also update this view's bounds)
+        NSRect titleBounds = [self titleBoundingRect];
+        newWidth = titleBounds.size.width+self.image.size.width; //+ (2 * STATUS_ITEM_WIDTH);
+        NSLog(@"NEWWIDTH: %f",ceil(newWidth));
+        ( ((int)newWidth & 1) == 0) ? NSLog(@"Even") : NSLog(@"odd");
+        
+        newWidth = ( ((int)newWidth & 1) == 0) ? newWidth : newWidth+1;
+        
+        //(ceil(newWidth) %1 != 0)  ? ceil(newWidth+1)
+        [_statusItem setLength:ceil(newWidth)];
+        [self setNeedsDisplay:YES];
+    }
+    else{
+        //[self updateViewFrame];
+    }
+    
+}
+
 - (void)drawRect:(NSRect)dirtyRect
 {
     NSColor *color = _active ? [NSColor selectedMenuItemColor] : [NSColor clearColor];
     [color setFill];
     NSRectFill(dirtyRect);
+
+    // Draw title string
+    NSPoint origin = NSMakePoint(self.image.size.width,
+                                 3);
+    [self.title drawAtPoint:origin
+             withAttributes:[self titleAttributes]];
+
+    
     [super drawRect:dirtyRect];
 }
 
@@ -109,7 +174,9 @@
 
 - (void)popoverWillShow:(NSNotification *)notification
 {
-    if (_popoverWillShow) _popoverWillShow();
+    if (_popoverWillShow) {
+        _popoverWillShow();
+    }
 }
 
 - (void)popoverDidShow:(NSNotification *)notification
@@ -117,7 +184,9 @@
     // Place the panel over the middle of the NSPopover view.
     CGPoint p = self.window.frame.origin;
     p.y -= _windowController.window.frame.size.height + 13;
-    p.x -= (_windowController.window.frame.size.width / 2) - 11;
+    
+
+    p.x -= (_windowController.window.frame.size.width / 2) - (newWidth/2);
     
     // Bring the panel over the popover
     [_windowController.window setFrameOrigin:p];
@@ -126,17 +195,23 @@
     NSMutableArray *views = [NSMutableArray arrayWithArray:_popover.contentViewController.view.subviews];
     for (NSView *view in views) [view removeFromSuperview];
     
-    if (_popoverDidShow) _popoverDidShow();
+    if (_popoverDidShow) {
+         _popoverDidShow();
+    }
 }
 
 - (void)popoverWillClose:(NSNotification *)notification
 {
-    if (_popoverWillClose) _popoverWillClose();
+    if (_popoverWillClose) {
+         _popoverWillClose();
+    }
 }
 
 - (void)popoverDidClose:(NSNotification *)notification
 {
-    if (_popoverDidClose) _popoverDidClose();
+    if (_popoverDidClose) {
+        _popoverDidClose();
+    }
 }
 
 @end
@@ -144,5 +219,7 @@
 #pragma mark - ASHStatusItemPanel
 
 @implementation ASHStatusItemPanel
-- (BOOL)canBecomeKeyWindow { return YES; }
+- (BOOL)canBecomeKeyWindow {
+    return YES;
+}
 @end

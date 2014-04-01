@@ -30,7 +30,7 @@
         }
     }
     
-    id subtotal = [attributes valueForKeyPath:SubtotalAmtPath];//subtotal is the currentmarket price
+    id subtotal = [attributes valueForKeyPath:SubtotalAmtPath];//subtotal is the current market price
     if (![subtotal isEqualToString:nil]) {
         DLog(@"ob: %@ type: %@", subtotal , [subtotal class]);
         self.subtotal = subtotal;
