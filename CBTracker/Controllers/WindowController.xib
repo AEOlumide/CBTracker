@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13B3116" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="WindowController">
@@ -16,7 +16,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hasShadow="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" wantsToBeColor="NO" visibleAtLaunch="NO" animationBehavior="default" id="1" customClass="ASHStatusItemPanel">
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hasShadow="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="1" customClass="ASHStatusItemPanel">
             <windowStyleMask key="styleMask" nonactivatingPanel="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="283" height="237"/>
@@ -46,7 +46,7 @@
                         </constraints>
                         <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="center" placeholderString="Quantity:" drawsBackground="YES" id="rGN-Po-QWY">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" patternImage="A98F2161-8DA1-4103-ABE7-287B9162DB05" colorSpace="pattern"/>
+                            <color key="textColor" patternImage="6EDEB948-56F8-42FF-9C98-E75115B56024" colorSpace="pattern"/>
                             <color key="backgroundColor" red="0.92941182850000004" green="0.92941182850000004" blue="0.92941182850000004" alpha="1" colorSpace="deviceRGB"/>
                         </textFieldCell>
                     </textField>
@@ -59,7 +59,7 @@
                         </constraints>
                         <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="center" placeholderString="Subtotal:" drawsBackground="YES" id="QEE-8F-Dv2">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" patternImage="07685DFE-A769-43F2-BF8E-D06C82E56054" colorSpace="pattern"/>
+                            <color key="textColor" patternImage="B574ECF3-B46B-42AB-8B9B-700660B0765C" colorSpace="pattern"/>
                             <color key="backgroundColor" red="0.92941182850000004" green="0.92941182850000004" blue="0.92941182850000004" alpha="1" colorSpace="deviceRGB"/>
                         </textFieldCell>
                     </textField>
@@ -72,7 +72,7 @@
                         </constraints>
                         <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="center" placeholderString="Coinbase Fee:" drawsBackground="YES" id="ERz-o0-lSl">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" patternImage="936FD04E-3B70-4378-A736-0C56912DFA23" colorSpace="pattern"/>
+                            <color key="textColor" patternImage="086EE5BE-25C7-4276-93EF-3CD3DAFAA609" colorSpace="pattern"/>
                             <color key="backgroundColor" red="0.92941182850000004" green="0.92941182850000004" blue="0.92941182850000004" alpha="1" colorSpace="deviceRGB"/>
                         </textFieldCell>
                     </textField>
@@ -85,7 +85,7 @@
                         </constraints>
                         <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="center" placeholderString="Bank Fee:" drawsBackground="YES" id="FOa-Th-6la">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" patternImage="ACB2A585-B946-49A9-A186-AF0C1F8F72AB" colorSpace="pattern"/>
+                            <color key="textColor" patternImage="A334B2A5-66ED-4734-B0BB-7F74A6DE8A2C" colorSpace="pattern"/>
                             <color key="backgroundColor" red="0.92941182850000004" green="0.92941182850000004" blue="0.92941182850000004" alpha="1" colorSpace="deviceRGB"/>
                         </textFieldCell>
                     </textField>
@@ -98,7 +98,7 @@
                         </constraints>
                         <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="center" placeholderString="Total:" drawsBackground="YES" id="mC5-7e-DOr">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" patternImage="2EBC919B-D54B-450A-9EC9-B31C920F8FDC" colorSpace="pattern"/>
+                            <color key="textColor" patternImage="7F175E62-8B42-403B-9336-86BF1F46DD21" colorSpace="pattern"/>
                             <color key="backgroundColor" red="0.92941182850000004" green="0.92941182850000004" blue="0.92941182850000004" alpha="1" colorSpace="deviceRGB"/>
                         </textFieldCell>
                     </textField>
@@ -112,6 +112,14 @@
                         <connections>
                             <action selector="updateButtonClicked:" target="-2" id="5UK-eD-ace"/>
                         </connections>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMl-KF-O91">
+                        <rect key="frame" x="253" y="212" width="30" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="bevel" title="b" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="V1s-qf-w6l">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
                     </button>
                 </subviews>
                 <constraints>
@@ -136,7 +144,7 @@
         </window>
     </objects>
     <resources>
-        <image name="07685DFE-A769-43F2-BF8E-D06C82E56054" width="320" height="460">
+        <image name="086EE5BE-25C7-4276-93EF-3CD3DAFAA609" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -10023,7 +10031,7 @@ CQq/AAkKxAAJCswACQrPAAkK1AAJCtwACQrfAAkK8QAJCvQACQr5AAAAAAAABAEAAAAAAAAAQgAAAAAA
 AAAAAAAAAAAJCvs
 </mutableData>
         </image>
-        <image name="2EBC919B-D54B-450A-9EC9-B31C920F8FDC" width="320" height="460">
+        <image name="6EDEB948-56F8-42FF-9C98-E75115B56024" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -19910,7 +19918,7 @@ CQq/AAkKxAAJCswACQrPAAkK1AAJCtwACQrfAAkK8QAJCvQACQr5AAAAAAAABAEAAAAAAAAAQgAAAAAA
 AAAAAAAAAAAJCvs
 </mutableData>
         </image>
-        <image name="936FD04E-3B70-4378-A736-0C56912DFA23" width="320" height="460">
+        <image name="7F175E62-8B42-403B-9336-86BF1F46DD21" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -29797,7 +29805,7 @@ CQq/AAkKxAAJCswACQrPAAkK1AAJCtwACQrfAAkK8QAJCvQACQr5AAAAAAAABAEAAAAAAAAAQgAAAAAA
 AAAAAAAAAAAJCvs
 </mutableData>
         </image>
-        <image name="A98F2161-8DA1-4103-ABE7-287B9162DB05" width="320" height="460">
+        <image name="A334B2A5-66ED-4734-B0BB-7F74A6DE8A2C" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -39684,7 +39692,7 @@ CQq/AAkKxAAJCswACQrPAAkK1AAJCtwACQrfAAkK8QAJCvQACQr5AAAAAAAABAEAAAAAAAAAQgAAAAAA
 AAAAAAAAAAAJCvs
 </mutableData>
         </image>
-        <image name="ACB2A585-B946-49A9-A186-AF0C1F8F72AB" width="320" height="460">
+        <image name="B574ECF3-B46B-42AB-8B9B-700660B0765C" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
